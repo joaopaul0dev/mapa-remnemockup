@@ -1,7 +1,7 @@
 .container {
   display: flex;
   width: 100vw;
-  height: 100vh;
+  height: 100vh; /* antes: 100% */
   background-color: #ffffff;
   margin: 0;
   padding: 0;
@@ -10,9 +10,9 @@
 
 .side-bar {
   width: 350px;
-  height: 100%;
+  height: 40%;
   background-color: #ffffff;
-  padding: 2rem 1.5rem;
+  padding: 4rem 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,11 +42,10 @@
   text-align: center;
 }
 
-
 .box-mapa {
   flex: 1;
-  height: 100%;
-  padding: 2.5rem 2.5rem;
+  height: 60%;
+  padding: 4rem 3rem;
   position: relative;
 }
 
@@ -83,7 +82,7 @@
 
 #map .model-davi .state:hover .label_state {
   display: block;
-  fill: #FFF !important;
+  fill: #fff !important;
 }
 
 #map .model-davi .state .shape {
@@ -91,31 +90,40 @@
   transition: all 0.3s ease-in-out;
 }
 
-/* 
-  ESSA REGRA SUBSTITUI O JQUERY: 
-  Quando o state do React mudar e adicionar a classe 'active', ele ficará vermelho! 
-*/
 #map .model-davi .state.active .shape {
-  fill: #a80017 !important;
+  fill: #d23348 !important;
 }
 #map .model-davi .state.active .label_icon_state {
   fill: #fff !important;
 }
 
+#map .model-davi .state.fixed-color .shape {
+  fill: #a80017 !important;
+}
+#map .model-davi .state.fixed-color:hover .shape {
+  fill: #e36274 !important;
+}
+#map .model-davi .state.fixed-color .label_icon_state {
+  fill: #fff !important;
+}
+#map .model-davi .state.fixed-color:hover .label_icon_state {
+  fill: #fff !important;
+}
+
 #map .model-davi .state:hover .shape {
-  fill: #039be5 !important;
+  fill: #e36274 !important;
 }
 
 #map .model-davi .state .icon_state {
-  fill: #284779;
+  fill: #e36274;
 }
 
 #map .model-davi .state:hover .icon_state {
-  fill: #039be5;
+  fill: #e36274;
 }
 
 #map .model-davi .state .icon_state + .label_icon_state {
-  fill: #FFF;
+  fill: #fff;
 }
 
 #map .model-davi .state .label_icon_state {
@@ -123,7 +131,7 @@
 }
 
 #map .model-davi .state:hover .label_icon_state {
-  fill: #FFF;
+  fill: #fff;
 }
 
 #map .model-davi .state .label_state {
